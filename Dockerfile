@@ -1,9 +1,8 @@
 FROM ubuntu
 
 RUN \
-  sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
   apt-get update && \
-  apt-get install -y build-essential software-properties-common byobu curl git htop man unzip vim wget zip
+  apt-get install -y build-essential software-properties-common curl git wget zip
 
 RUN \
   echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
